@@ -16,7 +16,7 @@ What they need is to be able to scan through the PDFs or images submitted by stu
 
 In order to achieve this, the French Ministry of National Education seeks for our help to develop an AI system to recognize handwritten digits. However, due to the sanitary and economy crisis triggered by the Covid-19 pandemic, the Ministry wishes to minimize both the time costs and resources.
 
- 
+ <br>
 
 ### II.      Proposed Technical Solutions
 
@@ -24,7 +24,7 @@ After studying their needs, we understand that it is a computer vision problem. 
 
 To date, we know that deep learning is achieving state-of-the-art results on recognizing and classifying images. There are many neural network architectures available to solve computer vision problems, including CNN, LeNet-5, VGG, ResNet, etc. For our problem of classifying digits, which is rather classic, we decided to use a classic architecture - LeNet-5. Once again, this will help us to gain time and resources.
 
- 
+ <br>
 
 #### A.  Neural Network
 
@@ -36,7 +36,7 @@ Figure 1 shows a 4-layer neural network. The first layer is the input layer wher
 
 ![img](https://github.com/ywsyws/MSP1/blob/master/image/4LayerNN.jpg)
 
-Fig. 1 Fully Connected 4-Layer Neural Network
+Fig. 1 Fully Connected 4-Layer Neural Network <br>
 
 To illustrate how it works, we use a simplified 2-layer neural network as shown in Figure 2 below. For the moment, let us consider the neurons are black boxes. All input features will go through each node (black box) of the hidden layer. Then each node in the hidden layer will turn the inputs into a numerical result, which will then be passed to each node (only one in this example) of the output layer, which in turn will output a prediction. 
 
@@ -58,7 +58,7 @@ To illustrate how it works, we use a simplified 2-layer neural network as shown 
 
  
 
-Fig. 2 Fully Connected 2-Layer Neural Network
+Fig. 2 Fully Connected 2-Layer Neural Network<br>
 
  
 
@@ -66,7 +66,7 @@ So, what exactly happens inside the black boxes? Imagine a neural network that h
 
 ![img](https://github.com/ywsyws/MSP1/blob/master/image/NeuronZoomIn.jpg)
 
-Fig. 3 Neuron Zoom in
+Fig. 3 Neuron Zoom in <br>
 
 *x*: input features
 
@@ -78,7 +78,7 @@ Fig. 3 Neuron Zoom in
 
 *ŷ*: prediction
 
- 
+<br>
 
 The neuron gets *x* as inputs, transforms *x* with *w* and *b*:
 
@@ -92,17 +92,17 @@ Since this is a single neuron neural network, *a* will be equal to the predictio
 
 This left-to-right process is called forward propagation. However, for a neural network to learn to predict, we will need to adjust *w* and *b* by using backward propagation. Backward propagation goes from right to left. It finds the gradient by taking the derivative of the functions with respect to *w* and *b*. Then it uses this gradient to adjust the values of *w* and *b*, which is called gradient descent. We loop through this forward and backward propagation until we find a satisfactory prediction.
 
- 
+ <br>
 
 #### B.  Convolutional Neural Networks (CNN)
 
 Convolutional Neural Network (CNN) is a deep neural network class, most commonly used to analyze visual imagery.
 
-![img](https://github.com/ywsyws/MSP1/blob/master/image/ImageFlattening.jpg)
-
 The classic neural network explained above requires flattening the image before fitting to a fully connected layer. However, doing so, it cannot capture the spatial dependencies in an image. CNN uses relevant filters (also known as kernel) to capture these and perform a better prediction with less parameters.
 
- 
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ImageFlattening.jpg)
+
+
 
 ##### <u>Convolutional Layer</u>
 
@@ -138,7 +138,7 @@ There are two types of pooling: max and average pooling. Below is an example of 
 
 Compared to average pooling, max pooling removes noises to the maximum because it only keeps the maximum value. In practice, max pooling is used more often than average pooling.
 
- 
+ <br>
 
 #### C.  LeNet-5
 
@@ -170,7 +170,7 @@ To improve the performance, we will make a few adjustments to the architecture:
 
 3. Omit the fifth layer, fully connected layer (120 nodes). We obtained a better result without this layer.
 
- 
+ <br>
 
 ### III.    Solutions Implementation
 
