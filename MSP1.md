@@ -36,7 +36,7 @@ Figure 1 shows a 4-layer neural network. The first layer is the input layer wher
 
 ![img](https://github.com/ywsyws/MSP1/blob/master/image/4LayerNN.jpg)
 
-Fig. 1 Fully Connected 4-Layer Neural Network <br>
+Fig. 1 Fully Connected 4-Layer Neural Network <br><br>
 
 To illustrate how it works, we use a simplified 2-layer neural network as shown in Figure 2 below. For the moment, let us consider the neurons are black boxes. All input features will go through each node (black box) of the hidden layer. Then each node in the hidden layer will turn the inputs into a numerical result, which will then be passed to each node (only one in this example) of the output layer, which in turn will output a prediction. 
 
@@ -58,7 +58,7 @@ To illustrate how it works, we use a simplified 2-layer neural network as shown 
 
  
 
-Fig. 2 Fully Connected 2-Layer Neural Network<br>
+Fig. 2 Fully Connected 2-Layer Neural Network<br><br>
 
  
 
@@ -66,7 +66,7 @@ So, what exactly happens inside the black boxes? Imagine a neural network that h
 
 ![img](https://github.com/ywsyws/MSP1/blob/master/image/NeuronZoomIn.jpg)
 
-Fig. 3 Neuron Zoom in <br>
+Fig. 3 Neuron Zoom in <br><br>
 
 *x*: input features
 
@@ -104,7 +104,7 @@ The classic neural network explained above requires flattening the image before 
 
 
 
-##### <u>Convolutional Layer</u>
+##### <ins>Convolutional Layer</ins>
 
 In a convolutional layer, we use a filter to do convolutional operation on the input features. In the example below, we use a 3x3 filter on a 6x6 input matrix.
 
@@ -128,7 +128,7 @@ You can also use more than one filter. The number of output matrices will equal 
 
  
 
-##### <u>Pooling</u>
+##### <ins>Pooling</ins>
 
 Another kind of layer in CNN is pooling layer. Pooling is used to reduce the spatial size of the convolved feature. It helps to reduce computational power by reducing dimensionality.
 
