@@ -64,7 +64,11 @@ Fig. 2 Fully Connected 2-Layer Neural Network
 
 So, what exactly happens inside the black boxes? Imagine a neural network that has only one neuron as shown in Figure 3.
 
-![img](https://github.com/ywsyws/MSP1/blob/master/image/NeuronZoomIn.jpg)*x*: input features
+![img](https://github.com/ywsyws/MSP1/blob/master/image/NeuronZoomIn.jpg)
+
+Fig. 3 Neuron Zoom in
+
+*x*: input features
 
 *w*: weight
 
@@ -73,10 +77,6 @@ So, what exactly happens inside the black boxes? Imagine a neural network that h
 *σ*: activation function
 
 *ŷ*: prediction
-
- 
-
-  Fig. 3 Neuron Zoom in
 
  
 
@@ -96,7 +96,9 @@ This left-to-right process is called forward propagation. However, for a neural 
 
 #### B.  Convolutional Neural Networks (CNN)
 
-![img](https://github.com/ywsyws/MSP1/blob/master/image/ImageFlattening.jpg)Convolutional Neural Network (CNN) is a deep neural network class, most commonly used to analyze visual imagery.
+Convolutional Neural Network (CNN) is a deep neural network class, most commonly used to analyze visual imagery.
+
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ImageFlattening.jpg)
 
 The classic neural network explained above requires flattening the image before fitting to a fully connected layer. However, doing so, it cannot capture the spatial dependencies in an image. CNN uses relevant filters (also known as kernel) to capture these and perform a better prediction with less parameters.
 
@@ -114,13 +116,9 @@ We hover the filter on the input matrix, starting from the top left corner where
 
 We fill the top left entry of the output matrix with the answer, -5. Then we shift the filter one step to the right, where the green square is, and repeat the operation. When it reaches to the right side, it will then go back to the left side but shift one step down, and so on and so forth, until it reaches to the bottom right corner, where the blue square is. The output matrix will be 4x4 (= 6 – 3 + 1).
 
-![img](https://github.com/ywsyws/MSP1/blob/master/image/ConvolutionalWeights.jpg)Instead of handcrafting the filters, we can also use deep learning to learn the best weight of the filters.
+Instead of handcrafting the filters, we can also use deep learning to learn the best weight of the filters.
 
- 
-
- 
-
- 
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ConvolutionalWeights.jpg)
 
  
 
@@ -134,7 +132,9 @@ You can also use more than one filter. The number of output matrices will equal 
 
 Another kind of layer in CNN is pooling layer. Pooling is used to reduce the spatial size of the convolved feature. It helps to reduce computational power by reducing dimensionality.
 
-![img](https://github.com/ywsyws/MSP1/blob/master/image/AvePool.jpg)There are two types of pooling: max and average pooling. On the right is an example of an average pooling with a 2x2 filter and a stride length of 2. Similar to the convolutional layer, the filter hovers over the top left corner. But this time, it returns an average of the four numbers over which it hovers. In max pooling, it will returns the maximum value among the four numbers instead. Then it shifts two steps to the right (due to stride length = 2) and repeats the same operation, and so on and so forth, until it reaches the red square. 
+There are two types of pooling: max and average pooling. Below is an example of an average pooling with a 2x2 filter and a stride length of 2. Similar to the convolutional layer, the filter hovers over the top left corner. But this time, it returns an average of the four numbers over which it hovers. In max pooling, it will returns the maximum value among the four numbers instead. Then it shifts two steps to the right (due to stride length = 2) and repeats the same operation, and so on and so forth, until it reaches the red square. 
+
+![img](https://github.com/ywsyws/MSP1/blob/master/image/AvePool.jpg)
 
 Compared to average pooling, max pooling removes noises to the maximum because it only keeps the maximum value. In practice, max pooling is used more often than average pooling.
 
