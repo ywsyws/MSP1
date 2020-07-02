@@ -34,13 +34,13 @@ Before going further to discuss different neural network architectures. Let us t
 
 Figure 1 shows a 4-layer neural network. The first layer is the input layer where it receives the input features for training. We do not count the input layer as a layer. Therefore, in Figure 1, there are only 4 layers, but not 5, with the first 2 layers having 5 nodes (or neurons), the third layer 3 nodes and the last layer, i.e., output layer, one node. All the layers between the input and output layers are called hidden layers. The number of nodes in the output layer depends on the problems we need to solve. For example, in our case, we need to classify digits ranging from 0 – 9. Hence, there will be 10 nodes in our output layer.
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg)
+![img](https://github.com/ywsyws/MSP1/blob/master/image/4LayerNN.jpg)
 
 Fig. 1 Fully Connected 4-Layer Neural Network
 
 To illustrate how it works, we use a simplified 2-layer neural network as shown in Figure 2 below. For the moment, let us consider the neurons are black boxes. All input features will go through each node (black box) of the hidden layer. Then each node in the hidden layer will turn the inputs into a numerical result, which will then be passed to each node (only one in this example) of the output layer, which in turn will output a prediction. 
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![img](https://github.com/ywsyws/MSP1/blob/master/image/2LayerNN.jpg)
 
  
 
@@ -64,7 +64,7 @@ Fig. 2 Fully Connected 2-Layer Neural Network
 
 So, what exactly happens inside the black boxes? Imagine a neural network that has only one neuron as shown in Figure 3.
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png)*x*: input features
+![img](https://github.com/ywsyws/MSP1/blob/master/image/NeuronZoomIn.jpg)*x*: input features
 
 *w*: weight
 
@@ -96,7 +96,7 @@ This left-to-right process is called forward propagation. However, for a neural 
 
 #### B.  Convolutional Neural Networks (CNN)
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)Convolutional Neural Network (CNN) is a deep neural network class, most commonly used to analyze visual imagery.
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ImageFlattening.jpg)Convolutional Neural Network (CNN) is a deep neural network class, most commonly used to analyze visual imagery.
 
 The classic neural network explained above requires flattening the image before fitting to a fully connected layer. However, doing so, it cannot capture the spatial dependencies in an image. CNN uses relevant filters (also known as kernel) to capture these and perform a better prediction with less parameters.
 
@@ -110,11 +110,11 @@ We hover the filter on the input matrix, starting from the top left corner where
 
 ​      3x1 + 1x1 + 2x1 + 0x0 + 5x0 + 7x0 + 1x(-1) + 8x(-1) + 2x(-1) = -5
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ConvolutionalLayer.jpg)
 
 We fill the top left entry of the output matrix with the answer, -5. Then we shift the filter one step to the right, where the green square is, and repeat the operation. When it reaches to the right side, it will then go back to the left side but shift one step down, and so on and so forth, until it reaches to the bottom right corner, where the blue square is. The output matrix will be 4x4 (= 6 – 3 + 1).
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)Instead of handcrafting the filters, we can also use deep learning to learn the best weight of the filters.
+![img](https://github.com/ywsyws/MSP1/blob/master/image/ConvolutionalWeights.jpg)Instead of handcrafting the filters, we can also use deep learning to learn the best weight of the filters.
 
  
 
@@ -126,7 +126,7 @@ We fill the top left entry of the output matrix with the answer, -5. Then we shi
 
 You can also use more than one filter. The number of output matrices will equal to the number of filters. And they will be concatenated to form a 3D matrix as shown on the graph below.
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+![img](https://github.com/ywsyws/MSP1/blob/master/image/MultipleLayer.jpg)
 
  
 
@@ -134,7 +134,7 @@ You can also use more than one filter. The number of output matrices will equal 
 
 Another kind of layer in CNN is pooling layer. Pooling is used to reduce the spatial size of the convolved feature. It helps to reduce computational power by reducing dimensionality.
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image016.png)There are two types of pooling: max and average pooling. On the right is an example of an average pooling with a 2x2 filter and a stride length of 2. Similar to the convolutional layer, the filter hovers over the top left corner. But this time, it returns an average of the four numbers over which it hovers. In max pooling, it will returns the maximum value among the four numbers instead. Then it shifts two steps to the right (due to stride length = 2) and repeats the same operation, and so on and so forth, until it reaches the red square. 
+![img](https://github.com/ywsyws/MSP1/blob/master/image/AvePool.jpg)There are two types of pooling: max and average pooling. On the right is an example of an average pooling with a 2x2 filter and a stride length of 2. Similar to the convolutional layer, the filter hovers over the top left corner. But this time, it returns an average of the four numbers over which it hovers. In max pooling, it will returns the maximum value among the four numbers instead. Then it shifts two steps to the right (due to stride length = 2) and repeats the same operation, and so on and so forth, until it reaches the red square. 
 
 Compared to average pooling, max pooling removes noises to the maximum because it only keeps the maximum value. In practice, max pooling is used more often than average pooling.
 
@@ -158,7 +158,7 @@ LeNet-5 consists of:
 
 6. Fully connected layer (84 nodes)
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image018.jpg) 
+![img](https://github.com/ywsyws/MSP1/blob/master/image/LeNet5.jpg) 
 
  
 
@@ -178,7 +178,7 @@ Please see the details of the technical implementation in this [GitHub repositor
 
 To conclude, we reached a very satisfactory accuracy of 99.1%. When we took a closer look at theose wrongly predicted images, we found that those are mostly images that were labeled wrongly. Considering this, our client, the French Ministry of National Education, very happily accepted our model and will have a nationwide implementation to all primary schools in order to better prepare the possible return of the Covid-19 in the coming winter.
 
-![img](file:///C:/Users/MPNH3677/AppData/Local/Temp/msohtmlclip1/01/clip_image020.jpg)
+![img](https://github.com/ywsyws/MSP1/blob/master/image/WrongPrediction.jpg)
 
  
 
